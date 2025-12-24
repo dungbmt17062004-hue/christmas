@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>🎄 Merry Christmas - Nguyen Tan Dung 🎄</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 3em;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    width: 85%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 22px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* NỘI DUNG */
+.card p {
+    font-size: 1.35em;
+    line-height: 1.6;
+    text-align: justify;        /* ⭐ căn đều 2 bên */
+}
+
+/* ẢNH */
+.card img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: center 65%;
+    border-radius: 15px;
+    margin-top: 15px;
+    display: block;
+}
+
+/* CHỮ KÝ */
+.signature {
+    margin-top: 15px;
+    font-style: italic;
+    color: #ffd700;
+    text-align: right;
+}
+
+audio {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎄 Merry Christmas 🎄</h1>
+
+<div class="card">
+    <p id="message">
+        Giáng sinh này và cả những mùa Giáng sinh sau nữa,
+        anh chỉ mong em bé luôn ở bên cạnh anh.
+        Chúc em bé iu của anh một Noel thật ấm áp,
+        hạnh phúc và tràn đầy yêu thương ❤️🎄
+    </p>
+
+    <img src="z7362177506393_71b1142a1b209a1f0092d1fab87a3866.jpg" alt="Christmas Image">
+
+    <p class="signature">
+        Trần Lê Ái Vi ❤️
+    </p>
+</div>
+
+<!-- NHẠC -->
+<audio autoplay loop>
+    <source src="Christmas Playlist _.mp3" type="audio/mpeg">
+</audio>
+
+<!-- TUYẾT RƠI -->
+<script>
+for (let i = 0; i < 50; i++) {
+    let snow = document.createElement("div");
+    snow.innerHTML = "❄️";
+    snow.style.position = "fixed";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.top = "-10px";
+    snow.style.fontSize = Math.random() * 24 + 10 + "px";
+    snow.style.animation = "fall " + (Math.random() * 5 + 5) + "s linear infinite";
+    document.body.appendChild(snow);
+}
+</script>
+
+<style>
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
+</style>
+
+<!-- NHẬN LỰA CHỌN TỪ WEB TRƯỚC -->
+<script>
+const type = new URLSearchParams(window.location.search).get("type");
+
+if (type === "normal") {
+    document.getElementById("message").innerText =
+    "Chúc bạn một mùa Giáng Sinh an lành, ấm áp và tràn đầy niềm vui bên gia đình và những người thân yêu 🎄✨";
+}
+</script>
+
+</body>
+</html>
