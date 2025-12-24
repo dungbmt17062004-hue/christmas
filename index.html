@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>🎄 Merry Christmas 🎄</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 {
+            margin-top: 100px;
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🎄 Merry Christmas 🎄</h1>
+<p>Chúc bạn một mùa Giáng Sinh an lành & hạnh phúc ❤️</p>
+
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Hiệu ứng tuyết
+    for (let i = 0; i < 50; i++) {
+        let snow = document.createElement("div");
+        snow.innerHTML = "❄️";
+        snow.style.position = "fixed";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.top = "-10px";
+        snow.style.fontSize = Math.random() * 24 + 10 + "px";
+        snow.style.animation = "fall 5s linear infinite";
+        document.body.appendChild(snow);
+    }
+</script>
+
+<style>
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+</style>
+
+</body>
+</html>
