@@ -3,17 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>🎁 Chọn thiệp Giáng Sinh</title>
+
 <style>
-/* Giữ nguyên CSS cũ của bạn */
+/* Giữ nguyên CSS cũ */
 body{ margin:0; font-family: Arial, sans-serif; background: linear-gradient(to bottom, #000428, #004e92); color:white; text-align:center; }
 .start{ position:fixed; inset:0; display:flex; justify-content:center; align-items:center; }
 .start button{ padding:20px 45px; font-size:22px; border:none; border-radius:40px; cursor:pointer; background:linear-gradient(45deg,#ff5252,#ff1744); color:white; box-shadow:0 0 30px rgba(255,80,80,.8); }
 .choice{ display:none; position:fixed; inset:0; background:rgba(0,0,0,.8); justify-content:center; align-items:center; }
 .box{ background:white; color:#333; padding:30px; border-radius:20px; width:90%; max-width:350px; }
 .box h2{ margin-bottom:20px; }
-.box button{ width:100%; padding:12px; margin:10px 0; font-size:16px; border:none; border-radius:25px; cursor:pointer; background:#d32f2f; color:white; }
+.box button{ width:100%; padding:12px; margin:10px 0; font-size:16px; border:none; border-radius:25px; cursor:pointer; background:#d32f2f; color:white; transition: 0.3s; }
+.box button:hover{ transform: scale(1.05); }
 </style>
 </head>
+
 <body>
 
 <div class="start" id="start">
@@ -22,18 +25,21 @@ body{ margin:0; font-family: Arial, sans-serif; background: linear-gradient(to b
 
 <div class="choice" id="choice">
     <div class="box">
-        <h2>🎄 Bạn muốn xem thiệp nào?</h2>
+        <h2>🎄 Em chọn điiii</h2>
+
         <button onclick="go('card.html?type=love')">
-            💖 Thiệp dành riêng cho em
+            ❤️ Em yêu anh
         </button>
 
-        <button onclick="go('card.html?type=normal')">
-            🎅 Thiệp Giáng Sinh
+        <button onclick="tricky()">
+            😏 Mặc kệ
         </button>
     </div>
 </div>
 
 <script>
+var count = 0;
+
 function openChoice(){
     document.getElementById("start").style.display="none";
     document.getElementById("choice").style.display="flex";
@@ -41,6 +47,20 @@ function openChoice(){
 
 function go(url){
     window.location.href = url;
+}
+
+// Hàm xử lý khi bấm nút "Mặc kệ"
+function tricky(){
+    count++;
+    if(count == 1){
+        alert("Sao lại mặc kệ? Chọn 'Em yêu anh' đi mà! 🥺");
+    } else if(count == 2){
+        alert("Thôi đừng dỗi nữa, bấm 'Em yêu anh' đi! 💖");
+    } else if(count == 3){
+        alert("Năn nỉ đó... Chọn cái ở trên đi! 😭");
+    } else {
+        alert("Bắt buộc phải yêu thôi! Không cho chọn cái này nữa! 😤");
+    }
 }
 </script>
 
